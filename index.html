@@ -21,36 +21,44 @@
   <meta property="og:description" content="ThriveOn - Empowering Caregivers with AI" />
   <meta property="og:type" content="website" />
 
-  <!-- Removed: <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
-
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Removed: <meta name="twitter:site" content="@lovable_dev" /> -->
-  <!-- Removed: <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
 
   <!-- Reddit Pixel -->
   <script>
-    !function (w, d) { if (!w.rdt) { var p = w.rdt = function () { p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments) }; p.callQueue = []; var t = d.createElement("script"); t.src = "https://www.redditstatic.com/ads/pixel.js", t.async = !0; var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s) } }(window, document);
-    rdt('init', 'a2_hbnp8vgfiefb', {
-      optOut: false,
-      useDecimalCurrencyValues: true,
-      email: false
-    });
+    !function (w, d) {
+      if (!w.rdt) {
+        var p = w.rdt = function () {
+          p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments)
+        };
+        p.callQueue = [];
+        var t = d.createElement("script");
+        t.src = "https://www.redditstatic.com/ads/pixel.js";
+        t.async = !0;
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(t, s)
+      }
+    }(window, document);
+    rdt('init', 'a2_hdfhz36w2rh8');
     rdt('track', 'PageVisit');
-
-    window.trackRedditConversion = function (email, customData = {}) {
-      rdt('track', 'SignUp', {
-        email: email,
-        customEventName: 'ThriveOn_Early_Access_Signup',
-        ...customData
-      });
-    };
   </script>
+  <!-- DO NOT MODIFY UNLESS TO REPLACE A USER IDENTIFIER -->
   <!-- End Reddit Pixel -->
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!-- ✅ Footer Links -->
+  <div
+    style="margin-top: 2rem; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; font-size: 0.875rem; color: #6b7280;">
+    <div>© Built by Caregivers and Survivors @ThriveOn. All rights reserved.</div>
+    <div style="display: flex; gap: 1.5rem;">
+      <a href="/privacy_policy.html" style="text-decoration: none; color: #6b7280;">Privacy Policy</a>
+      <a href="/terms_and_conditions.html" style="text-decoration: none; color: #6b7280;">Terms & Conditions</a>
+      <a href="/contact_page_form.html" style="text-decoration: none; color: #6b7280;">Contact</a>
+    </div>
+  </div>
+
   <script type="module" src="/src/main.tsx"></script>
 </body>
 
