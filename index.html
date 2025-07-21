@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThriveOn</title>
+  <meta name="description" content="ThriveOn - Empowering Caregivers with AI" />
+  <meta name="author" content="ThriveOn" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@600&display=swap"
+    rel="stylesheet" />
+
+  <meta property="og:title" content="ThriveOn" />
+  <meta property="og:description" content="ThriveOn - Empowering Caregivers with AI" />
+  <meta property="og:type" content="website" />
+
+  <!-- Removed: <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Removed: <meta name="twitter:site" content="@lovable_dev" /> -->
+  <!-- Removed: <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
+
+  <!-- Reddit Pixel -->
+  <script>
+    !function (w, d) { if (!w.rdt) { var p = w.rdt = function () { p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments) }; p.callQueue = []; var t = d.createElement("script"); t.src = "https://www.redditstatic.com/ads/pixel.js", t.async = !0; var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s) } }(window, document);
+    rdt('init', 'a2_hbnp8vgfiefb', {
+      optOut: false,
+      useDecimalCurrencyValues: true,
+      email: false
+    });
+    rdt('track', 'PageVisit');
+
+    window.trackRedditConversion = function (email, customData = {}) {
+      rdt('track', 'SignUp', {
+        email: email,
+        customEventName: 'ThriveOn_Early_Access_Signup',
+        ...customData
+      });
+    };
+  </script>
+  <!-- End Reddit Pixel -->
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
