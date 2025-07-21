@@ -141,11 +141,10 @@ export const HeroVideoPlayer = () => {
   console.log('HeroVideoPlayer rendering, currentScene:', currentScene);
   
   return (
-    <div className="relative w-full max-w-6xl mx-auto">
+    <div className="relative w-full max-w-6xl mx-auto px-2 sm:px-0">
       <div 
         ref={containerRef}
-        className="video-container aspect-video rounded-xl overflow-hidden shadow-2xl bg-background relative"
-        style={{ minHeight: '400px' }}
+        className="video-container w-full h-[250px] sm:h-[350px] md:h-[400px] lg:aspect-video rounded-xl overflow-hidden shadow-2xl bg-background relative"
       >
         {/* Scene 0: Play Button */}
         {currentScene === 0 && (
@@ -179,38 +178,38 @@ export const HeroVideoPlayer = () => {
         </div>
         
         {/* Scene 2: MyThri Arrives */}
-        <div className={`scene absolute inset-0 bg-gray-900 flex flex-col items-center justify-center ${currentScene === 2 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
-          <div className="text-7xl mb-4 text-cyan-300 font-mono">(★‿★)</div>
-          <h2 className="text-white text-3xl font-bold">This is MyThri.</h2>
-          <p className="text-gray-300 text-lg">Your personal AI agent for caregiving.</p>
+        <div className={`scene absolute inset-0 bg-gray-900 flex flex-col items-center justify-center px-4 ${currentScene === 2 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+          <div className="text-5xl sm:text-6xl lg:text-7xl mb-4 text-cyan-300 font-mono">(★‿★)</div>
+          <h2 className="text-white text-xl sm:text-2xl lg:text-3xl font-bold text-center">This is MyThri.</h2>
+          <p className="text-gray-300 text-base sm:text-lg text-center">Your personal AI agent for caregiving.</p>
         </div>
 
         {/* Scene 3: The Demo Dashboard */}
-        <div className={`scene absolute inset-0 p-8 flex flex-col justify-center ${currentScene === 3 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+        <div className={`scene absolute inset-0 p-4 sm:p-6 lg:p-8 flex flex-col justify-center ${currentScene === 3 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
           <div className="text-center mb-4">
-            <h2 className="text-2xl font-bold" style={{ color: 'hsl(var(--dark-blue))' }}>It works by delegating tasks...</h2>
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold" style={{ color: 'hsl(var(--dark-blue))' }}>It works by delegating tasks...</h2>
           </div>
-          <div className="grid grid-cols-3 gap-4">
-            <div className={`agent-card bg-gray-800 text-white p-4 rounded-lg text-center border-2 transition-all duration-500 ${
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
+            <div className={`agent-card bg-gray-800 text-white p-3 sm:p-4 rounded-lg text-center border-2 transition-all duration-500 ${
               demoState.mythriActive ? 'border-[#2D7A74] shadow-lg scale-105' : 'border-transparent'
             }`}>
-              <div className="text-cyan-300 text-5xl font-mono">(★‿★)</div>
-              <h3 className="font-bold text-lg">MyThri</h3>
-              <p className="text-sm text-cyan-300 h-5">{demoState.mythriStatus}</p>
+              <div className="text-cyan-300 text-3xl sm:text-4xl lg:text-5xl font-mono">(★‿★)</div>
+              <h3 className="font-bold text-sm sm:text-base lg:text-lg">MyThri</h3>
+              <p className="text-xs sm:text-sm text-cyan-300 h-4 sm:h-5">{demoState.mythriStatus}</p>
             </div>
-            <div className="flex flex-col justify-center items-center text-white text-4xl font-bold">→</div>
-            <div className="space-y-2">
-              <div className={`agent-card bg-blue-100 p-2 rounded-lg flex items-center space-x-2 border-2 transition-all duration-500 ${
+            <div className="hidden sm:flex flex-col justify-center items-center text-white text-2xl sm:text-3xl lg:text-4xl font-bold">→</div>
+            <div className="space-y-1 sm:space-y-2">
+              <div className={`agent-card bg-blue-100 p-2 rounded-lg flex items-center space-x-1 sm:space-x-2 border-2 transition-all duration-500 ${
                 demoState.logisticsActive ? 'border-[#2D7A74] shadow-lg scale-105' : 'border-transparent'
               }`}>
-                <div className="text-blue-800 text-2xl font-mono">[-_-]</div>
-                <p className="text-sm text-blue-800">Handles logistics.</p>
+                <div className="text-blue-800 text-lg sm:text-xl lg:text-2xl font-mono">[-_-]</div>
+                <p className="text-xs sm:text-sm text-blue-800">Handles logistics.</p>
               </div>
-              <div className={`agent-card bg-teal-100 p-2 rounded-lg flex items-center space-x-2 border-2 transition-all duration-500 ${
+              <div className={`agent-card bg-teal-100 p-2 rounded-lg flex items-center space-x-1 sm:space-x-2 border-2 transition-all duration-500 ${
                 demoState.connectionActive ? 'border-[#2D7A74] shadow-lg scale-105' : 'border-transparent'
               }`}>
-                <div className="text-teal-800 text-2xl font-mono">(◡‿◡)</div>
-                <p className="text-sm text-teal-800">Finds connection moments.</p>
+                <div className="text-teal-800 text-lg sm:text-xl lg:text-2xl font-mono">(◡‿◡)</div>
+                <p className="text-xs sm:text-sm text-teal-800">Finds connection moments.</p>
               </div>
             </div>
           </div>
@@ -223,15 +222,15 @@ export const HeroVideoPlayer = () => {
                backgroundSize: 'cover',
                backgroundPosition: 'center'
              }}>
-          <div className="w-full h-full flex items-center justify-center bg-black/40">
-            <h2 className="text-white text-4xl font-bold text-center">Bringing the hues of life back.</h2>
+          <div className="w-full h-full flex items-center justify-center bg-black/40 px-4">
+            <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold text-center">Bringing the hues of life back.</h2>
           </div>
         </div>
         
         {/* Scene 5: Final CTA */}
-        <div className={`scene absolute inset-0 flex flex-col items-center justify-center bg-teal-700 ${currentScene === 5 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
-          <h2 className="text-5xl font-bold text-white">ThriveOn</h2>
-          <p className="text-white text-xl mt-2">Stop managing. Start connecting.</p>
+        <div className={`scene absolute inset-0 flex flex-col items-center justify-center bg-teal-700 px-4 ${currentScene === 5 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">ThriveOn</h2>
+          <p className="text-white text-lg sm:text-xl mt-2 text-center">Stop managing. Start connecting.</p>
         </div>
       </div>
     </div>
