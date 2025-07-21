@@ -188,7 +188,7 @@ export const HeroVideoPlayer = () => {
         {/* Scene 3: The Demo Dashboard */}
         <div className={`scene absolute inset-0 p-8 flex flex-col justify-center ${currentScene === 3 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
           <div className="text-center mb-4">
-            <h2 className="text-2xl font-bold text-white">It works by delegating tasks...</h2>
+            <h2 className="text-2xl font-bold" style={{ color: 'hsl(var(--dark-blue))' }}>It works by delegating tasks...</h2>
           </div>
           <div className="grid grid-cols-3 gap-4">
             <div className={`agent-card bg-gray-800 text-white p-4 rounded-lg text-center border-2 transition-all duration-500 ${
