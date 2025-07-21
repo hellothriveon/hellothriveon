@@ -1,105 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - ThriveOn</title>
-    <meta name="description" content="Contact ThriveOn - Empowering Caregivers with AI" />
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-        color: #1f2937;
-      }
-      .container {
-        max-width: 960px;
-        margin: 2rem auto;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 0.5rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      }
-      h1 {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      .contact-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-      }
-      .info, .form {
-        flex: 1 1 45%;
-      }
-      .info p {
-        margin: 0.5rem 0;
-      }
-      label {
-        display: block;
-        margin-bottom: 0.25rem;
-        font-weight: 600;
-      }
-      input, textarea {
-        width: 100%;
-        padding: 0.75rem;
-        margin-bottom: 1rem;
-        border: 1px solid #d1d5db;
-        border-radius: 0.375rem;
-        font-size: 1rem;
-      }
-      button {
-        padding: 0.75rem 1.5rem;
-        background: linear-gradient(to right, #3cb8a9, #9ad7c6);
-        color: white;
-        font-weight: 600;
-        border: none;
-        border-radius: 0.375rem;
-        cursor: pointer;
-        width: 100%;
-      }
-      button:hover {
-        opacity: 0.95;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Get in Touch</h1>
-      <div class="contact-grid">
-        <div class="info">
-          <p><strong>Address:</strong><br />123 Business Avenue, New York, NY 10001</p>
-          <p><strong>Email:</strong><br />support@thriveon.app</p>
-          <p><strong>Phone:</strong><br />+1 (555) 555-5555</p>
-        </div>
-        <div class="form">
-          <form name="contact" method="POST" data-netlify="true">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - ThriveOn</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      /* Light gray background for the page */
+      color: #1f2937;
+      /* Dark gray for text */
+    }
+
+    .form-input {
+      background-color: #ffffff;
+      border: 1px solid #d1d5db;
+      /* gray-300 */
+      color: #1f2937;
+      border-radius: 0.375rem;
+      padding: 0.75rem;
+      width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #3cb8a9;
+      box-shadow: 0 0 0 2px rgba(60, 184, 169, 0.4);
+    }
+
+    /* Gradient button style from the image */
+    .btn-gradient {
+      background: linear-gradient(to right, #4a8e84, #d1e7e2);
+      color: white;
+      font-weight: 700;
+      /* Bolder text */
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+      /* Text shadow for readability */
+      border: none;
+      border-radius: 0.75rem;
+      /* Rounded rectangle shape */
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+      box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-gradient:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-16 md:py-24">
+    <div class="max-w-xl mx-auto">
+      <div class="text-center">
+        <a href="#" class="text-3xl font-bold text-gray-800">
+          Thrive<span style="color: #4a8e84;">On</span>
+        </a>
+        <h1 class="mt-4 text-4xl md:text-5xl font-bold text-gray-900">Get in Touch</h1>
+        <p class="mt-2 text-lg text-gray-600">We're here to help. Whether you have a question, feedback, or need
+          support, please reach out.</p>
+      </div>
+
+      <div class="mt-12 bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+        <!-- Contact Form -->
+        <div id="contact-form-container">
+          <form id="contact-form" name="contact" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="first-name" required />
-
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last-name" required />
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" />
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Send Message</button>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
+              <div>
+                <label for="first-name" class="block mb-1 font-semibold text-gray-700">First Name</label>
+                <input type="text" id="first-name" name="first-name" required class="form-input mb-4" />
+              </div>
+              <div>
+                <label for="last-name" class="block mb-1 font-semibold text-gray-700">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required class="form-input mb-4" />
+              </div>
+            </div>
+            <div>
+              <label for="email" class="block mb-1 font-semibold text-gray-700">Email Address</label>
+              <input type="email" id="email" name="email" required class="form-input mb-4" />
+            </div>
+            <div>
+              <label for="subject" class="block mb-1 font-semibold text-gray-700">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input mb-4" />
+            </div>
+            <div>
+              <label for="message" class="block mb-1 font-semibold text-gray-700">Message</label>
+              <textarea id="message" name="message" rows="5" required class="form-input mb-6"></textarea>
+            </div>
+            <button type="submit" class="w-full btn-gradient font-bold py-4 px-6 text-2xl">
+              Send Message
+            </button>
           </form>
+          <div id="success-message"
+            class="hidden mt-6 p-4 bg-green-100 border border-green-300 text-green-800 rounded-lg text-center">
+            <h3 class="font-bold text-lg">Thank you!</h3>
+            <p>Your message has been sent successfully. We'll get back to you shortly.</p>
+          </div>
         </div>
       </div>
     </div>
-  </body>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-gray-500">
+    <div class="container mx-auto px-6 py-8 text-center border-t border-gray-200">
+      <p>&copy; 2025 ThriveOn. An Agentic AI for Human Connection.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contact-form');
+      const formContainer = document.getElementById('contact-form-container');
+      const successMessage = document.getElementById('success-message');
+
+      form.addEventListener('submit', function (e) {
+        // This prevents the default form submission for this demo.
+        e.preventDefault();
+
+        // Hide the form and show the success message
+        form.style.display = 'none';
+        successMessage.classList.remove('hidden');
+      });
+    });
+  </script>
+
+</body>
+
 </html>
