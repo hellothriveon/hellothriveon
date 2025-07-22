@@ -22,48 +22,67 @@ const Index = () => {
 
         {/* Header */}
         <header className="text-center py-8 sm:py-12">
-          <h1 className="embossed-text text-3xl sm:text-4xl md:text-5xl font-bold text-primary">ThriveOn</h1>
+          <h1 className="embossed-text text-3xl sm:text-4xl md:text-5xl font-bold text-primary">Nuvori</h1>
         </header>
 
         <main>
-          <section id="hook" className="text-center mb-16 sm:mb-24">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold max-w-3xl mx-auto leading-tight mb-4 px-4" style={{ color: 'hsl(var(--dark-blue))' }}>
-              You're caring for everyone. But who's checking on you?
-            </h2>
-            <p className="text-base sm:text-lg max-w-3xl mx-auto mb-4 px-4" style={{ color: 'hsl(var(--dark-blue))' }}>
-              ThriveOn is your private AI support system—built for caregivers who feel invisible, exhausted, and alone. You're not broken. You're just burnt out. Let's reconnect you to yourself.
-            </p>
-            <p className="text-base sm:text-lg max-w-2xl mx-auto text-primary font-medium mb-8 px-4" style={{ fontFamily: '"Caveat", cursive' }}>
-              Think of it like a team of tiny AI helpers — each tuned to your caregiving needs.
-            </p>
+          {/* Desktop Layout with Sidebar */}
+          <div className="lg:grid lg:grid-cols-3 lg:gap-12 lg:items-start">
+            {/* Main Content Area */}
+            <div className="lg:col-span-2">
+              <section id="hook" className="text-center lg:text-left mb-16 sm:mb-24">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold max-w-3xl lg:max-w-none mx-auto lg:mx-0 leading-tight mb-4 px-4 lg:px-0" style={{ color: 'hsl(var(--dark-blue))' }}>
+                  You're caring for everyone. But who's checking on you?
+                </h2>
+                <p className="text-base sm:text-lg max-w-3xl lg:max-w-none mx-auto lg:mx-0 mb-4 px-4 lg:px-0" style={{ color: 'hsl(var(--dark-blue))' }}>
+                  Nuvori is your private AI support system—built for caregivers who feel invisible, exhausted, and alone. You're not broken. You're just burnt out. Let's reconnect you to yourself.
+                </p>
+                <p className="text-lg sm:text-xl max-w-2xl lg:max-w-none mx-auto lg:mx-0 text-primary font-semibold mb-8 px-4 lg:px-0">
+                  Think of it like a team of tiny AI helpers — each tuned to your caregiving needs.
+                </p>
 
-            <div className="flex justify-center mb-8">
-              <Button
-                variant="hero"
-                onClick={() => scrollToSection('signup-form-container')}
-              >
-                Get Early Access
-              </Button>
+                <div className="flex justify-center lg:justify-start mb-8 lg:mb-12 px-4 lg:px-0">
+                  <Button
+                    variant="hero"
+                    onClick={() => scrollToSection('signup-form-container')}
+                    className="text-lg px-8 py-3"
+                  >
+                    Get Early Access
+                  </Button>
+                </div>
+
+                {/* Video Player */}
+                <div className="w-full mb-10">
+                  <HeroVideoPlayer />
+                </div>
+              </section>
             </div>
 
-            {/* Video Player */}
-            <div className="w-full mb-10">
-              <HeroVideoPlayer />
+            {/* Sidebar with Signup Form - Desktop Only */}
+            <div className="hidden lg:block lg:sticky lg:top-8">
+              <div className="bg-gradient-to-br from-primary/5 to-secondary/10 p-6 rounded-xl border border-primary/20 shadow-lg">
+                <h3 className="text-xl font-bold mb-4 text-center" style={{ color: 'hsl(var(--dark-blue))' }}>
+                  Join the Waitlist
+                </h3>
+                <EmailSignupForm />
+              </div>
             </div>
+          </div>
 
-            {/* Signup Form */}
+          {/* Mobile Signup Form */}
+          <div className="lg:hidden mb-16">
             <EmailSignupForm />
-          </section>
+          </div>
 
           {/* Social Proof Section */}
-          <section id="social-proof" className="py-12 sm:py-16 lg:py-24">
+          <section id="social-proof" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-r from-muted/30 to-secondary/20 rounded-2xl">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-8 sm:mb-12 px-4" style={{ color: 'hsl(var(--dark-blue))' }}>
               You're managing schedules, medications, and a thousand tiny details.
               <br className="hidden sm:inline" />
               But who is managing the relationship?
             </h3>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-              <Card className="embossed border-l-4 border-l-primary shadow-lg">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 px-6">
+              <Card className="embossed border-l-4 border-l-primary shadow-lg bg-card/80 backdrop-blur-sm">
                 <CardContent className="p-6">
                   <p className="italic text-lg mb-4" style={{ color: 'hsl(var(--dark-blue))' }}>
                     "Caregiving became all about logistics. I feel like I'm more of a project manager than a spouse.
@@ -72,7 +91,7 @@ const Index = () => {
                   <p className="font-bold text-right" style={{ color: 'hsl(var(--dark-blue))' }}>- Steve, Caregiver</p>
                 </CardContent>
               </Card>
-              <Card className="embossed border-l-4 border-l-primary shadow-lg">
+              <Card className="embossed border-l-4 border-l-primary shadow-lg bg-card/80 backdrop-blur-sm">
                 <CardContent className="p-6">
                   <p className="italic text-lg mb-4" style={{ color: 'hsl(var(--dark-blue))' }}>
                     "I wish I had a 'pause' button—a way to handle the chaos so I could have just one clear-headed moment with my mom each day."
@@ -85,11 +104,11 @@ const Index = () => {
 
           {/* Solution Section */}
           <section id="solution" className="py-12 sm:py-16 lg:py-24">
-            <Card className="embossed shadow-xl">
+            <Card className="embossed shadow-xl bg-gradient-to-br from-primary/5 via-background to-accent/5">
               <CardContent className="p-4 sm:p-6 lg:p-8">
                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-4" style={{ color: 'hsl(var(--dark-blue))' }}>
-                    How ThriveOn Gives You Back Your Time and Your Relationship
+                    How Nuvori Gives You Back Your Time and Your Relationship
                   </h3>
                 </div>
                 <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
@@ -117,7 +136,7 @@ const Index = () => {
                     </div>
                     <h4 className="text-xl font-bold mb-2" style={{ color: 'hsl(var(--dark-blue))' }}>A Secure Memory Vault</h4>
                     <p style={{ color: 'hsl(var(--dark-blue))' }}>
-                      Safely store and share your most precious memories. ThriveOn uses them to create new opportunities for connection, turning your past into your present.
+                      Safely store and share your most precious memories. Nuvori uses them to create new opportunities for connection, turning your past into your present.
                     </p>
                   </div>
                 </div>
@@ -126,7 +145,7 @@ const Index = () => {
           </section>
 
           {/* Urgency Section */}
-          <section id="urgency" className="py-12 sm:py-16 lg:py-24 text-center">
+          <section id="urgency" className="py-12 sm:py-16 lg:py-24 text-center bg-gradient-to-t from-secondary/10 to-transparent rounded-2xl">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-4" style={{ color: 'hsl(var(--dark-blue))' }}>Join the Founding Members Circle</h3>
             <p className="text-base sm:text-lg max-w-2xl mx-auto mb-6 sm:mb-10 px-4" style={{ color: 'hsl(var(--dark-blue))' }}>
               Our mission is to help 1 million families thrive. We're starting with the first 5,000.
@@ -140,13 +159,14 @@ const Index = () => {
             <Button
               variant="cta"
               onClick={() => scrollToSection('signup-form-container')}
+              className="text-lg px-8 py-3"
             >
               Claim My Spot
             </Button>
           </section>
 
           {/* FAQ Section */}
-          <section id="faq" className="py-12 sm:py-16 lg:py-24 border-t border-border">
+          <section id="faq" className="py-12 sm:py-16 lg:py-24 border-t border-border bg-gradient-to-b from-muted/20 to-transparent">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 px-4" style={{ color: 'hsl(var(--dark-blue))' }}>Your Questions, Answered</h3>
             <div className="max-w-3xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
@@ -155,7 +175,7 @@ const Index = () => {
                     Is this just another complicated app to manage?
                   </AccordionTrigger>
                   <AccordionContent className="pt-2 pb-4" style={{ color: 'hsl(var(--dark-blue))' }}>
-                    Quite the opposite. ThriveOn is designed to <strong>reduce</strong> your cognitive load. Our Logistics Agent automates the tedious tasks to free you from spreadsheets and reminders. The goal is to give you more time away from screens, so you can have more real-world moments with the person you love.
+                    Quite the opposite. Nuvori is designed to <strong>reduce</strong> your cognitive load. Our Logistics Agent automates the tedious tasks to free you from spreadsheets and reminders. The goal is to give you more time away from screens, so you can have more real-world moments with the person you love.
                   </AccordionContent>
                 </AccordionItem>
 
@@ -181,7 +201,7 @@ const Index = () => {
                     How does this work for the person I'm caring for?
                   </AccordionTrigger>
                   <AccordionContent className="pt-2 pb-4" style={{ color: 'hsl(var(--dark-blue))' }}>
-                    The experience for your loved one is designed to be effortless. They don't need to be tech-savvy. The magic happens through the conversations *you* initiate, guided by ThriveOn's gentle prompts. The platform is a tool for you, the caregiver, to create moments of connection *with* them, not another screen for them to manage.
+                    The experience for your loved one is designed to be effortless. They don't need to be tech-savvy. The magic happens through the conversations *you* initiate, guided by Nuvori's gentle prompts. The platform is a tool for you, the caregiver, to create moments of connection *with* them, not another screen for them to manage.
                   </AccordionContent>
                 </AccordionItem>
 
@@ -190,7 +210,7 @@ const Index = () => {
                     What kind of caregiving situations is this for?
                   </AccordionTrigger>
                   <AccordionContent className="pt-2 pb-4" style={{ color: 'hsl(var(--dark-blue))' }}>
-                    ThriveOn is for anyone supporting a loved one through a long-term health challenge—whether it's dementia, cancer, post-stroke recovery, or other chronic illnesses. If you feel the focus has shifted from the heart of your relationship to the tasks of care, ThriveOn is designed for you.
+                    Nuvori is for anyone supporting a loved one through a long-term health challenge—whether it's dementia, cancer, post-stroke recovery, or other chronic illnesses. If you feel the focus has shifted from the heart of your relationship to the tasks of care, Nuvori is designed for you.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -200,7 +220,7 @@ const Index = () => {
 
         {/* Footer */}
         <footer className="text-center py-10 border-t border-border">
-          <p style={{ color: 'hsl(var(--dark-blue))' }}>&copy; Built by Caregivers and Survivors @ThriveOn. All rights reserved.</p>
+          <p style={{ color: 'hsl(var(--dark-blue))' }}>&copy; Built by Caregivers and Survivors @Nuvori. All rights reserved.</p>
         </footer>
 
       </div>
