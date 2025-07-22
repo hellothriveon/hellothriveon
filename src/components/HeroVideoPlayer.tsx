@@ -180,7 +180,7 @@ export const HeroVideoPlayer = () => {
         {/* Scene 2: MyThri Arrives */}
         <div className={`scene absolute inset-0 bg-gray-900 flex flex-col items-center justify-center px-4 ${currentScene === 2 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
           <div className="text-5xl sm:text-6xl lg:text-7xl mb-4 text-cyan-300 font-mono">(★‿★)</div>
-          <h2 className="text-white text-xl sm:text-2xl lg:text-3xl font-bold text-center">This is MyThri.</h2>
+          <h2 className="text-white text-xl sm:text-2xl lg:text-3xl font-bold text-center">This is Mynoo.</h2>
           <p className="text-gray-300 text-base sm:text-lg text-center">Your personal AI agent for caregiving.</p>
         </div>
 
@@ -194,7 +194,7 @@ export const HeroVideoPlayer = () => {
               demoState.mythriActive ? 'border-[#2D7A74] shadow-lg scale-105' : 'border-transparent'
             }`}>
               <div className="text-cyan-300 text-3xl sm:text-4xl lg:text-5xl font-mono">(★‿★)</div>
-              <h3 className="font-bold text-sm sm:text-base lg:text-lg">MyThri</h3>
+              <h3 className="font-bold text-sm sm:text-base lg:text-lg">Mynoo</h3>
               <p className="text-xs sm:text-sm text-cyan-300 h-4 sm:h-5">{demoState.mythriStatus}</p>
             </div>
             <div className="hidden sm:flex flex-col justify-center items-center text-white text-2xl sm:text-3xl lg:text-4xl font-bold">→</div>
@@ -229,7 +229,7 @@ export const HeroVideoPlayer = () => {
         
         {/* Scene 5: Final CTA */}
         <div className={`scene absolute inset-0 flex flex-col items-center justify-center bg-teal-700 px-4 ${currentScene === 5 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">ThriveOn</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">Nuvori</h2>
           <p className="text-white text-lg sm:text-xl mt-2 text-center">Stop managing. Start connecting.</p>
         </div>
       </div>
